@@ -1,0 +1,8 @@
+pick_up:
+  px: 3.5
+  py: -2
+  pw: 1.59
+drop_off:
+  px: 2
+  py: 3
+  pw: 1.59
