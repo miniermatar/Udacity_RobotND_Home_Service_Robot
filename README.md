@@ -32,13 +32,13 @@ Below are the details of each script created:
 
 <b>test_navigation.sh</b>: this script is used to test the robot navigation in the gazebo world using the map created with SLAM. A goal location target can be provided using Rviz. In this script, localization is performed using the adaptative montercarlo localization (AMCL) package. 
 
-<b>pick_object.sh</b>: this script opens the gazebo world and provide a pick up and drop up location to the robot. The coordinates for the pick up and drop up location are entered in a yaml file (/config/marker_loc.yaml). When the script runs, the pick_objects package sends the pickup location and the robot starts navigating there. Once it reached the location it waits 5 seconds before heading to the drop of location which is also provided by the pick_objects package based on the information on the marker_loc yaml file. Then the robot heads to the drop of location. This package also publishes a topic indicating if the robot arrived at the pick up or drop off locations which will be used to communicate with the add_markers package.
+<b>pick_object.sh</b>: this script opens the gazebo world and provide a pick up and drop up location to the robot. The coordinates for the pick up and drop up location are entered in a yaml file (`/config/marker_loc.yaml`). When the script runs, the pick_objects package sends the pickup location and the robot starts navigating there. Once it reached the location it waits 5 seconds before heading to the drop of location which is also provided by the pick_objects package based on the information on the marker_loc yaml file. Then the robot heads to the drop of location. This package also publishes a topic indicating if the robot arrived at the pick up or drop off locations which will be used to communicate with the add_markers package.
 
 <b>add_marker.sh</b>: Running this script will open the Gazebo world and Rviz and it will display a marker in the pick-up location that will last 5 seconds. Then the marker will disappear and 5 seconds later it will appear in the drop of location.  The pick up and drop off locations can be adjusted by editing the yaml file at `/config/marker_loc.yaml`
 
 <b>home_service.sh</b>: This script simulates a home service robot that picks up an object and drop it off in a different location. The script open the Gazebo world and the Adaptative Montecarlo Localization (AMCL) package to localize the robot. Then the pick_objects package sends a navigation goal (based on the details is the `/config/markers_loc.yaml`) for the pick up location. At the same time, the add_markers package will display a marker at the pick up location. Once the robot reaches the pick up location, the marker will disappear and the pick_objects package will send a navigation goal for the drop off location. Once the robot reaches the drop off location, the add_markers package will display the marker at the drop off location. 
 
-Below is a video showing the `home_service.sh` script running.
+The `Home_service_robot_video.mp4` shows a screen recording of the `home_service_robot.sh` script running.
 
 
 ### Notes:
